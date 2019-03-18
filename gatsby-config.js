@@ -7,6 +7,15 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `localhost:8080`,
+        protocal: `http`,
+        hostingWPCOM: false,
+        useACF: true,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

@@ -21,11 +21,20 @@ const Layout = ({ children }) => (
             title
           }
         }
+        wordpressWpApiMenusMenusItems(slug: { eq: "main-nav" }) {
+          items {
+            title
+            object_slug
+          }
+        }
       }
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header
+          menu={data.wordpressWpApiMenusMenusItems.items}
+          siteTitle={data.site.siteMetadata.title}
+        />
         <div
           style={{
             margin: `0 auto`,
